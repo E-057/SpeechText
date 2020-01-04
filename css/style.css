@@ -4,11 +4,12 @@
 /////////////////////////////////////////////////*/
 
 .line__container .speech-button {
-    background: #773333;
+    background: #666666;
     padding: 10px;
     text-align: center;
     font-size: 150%;
     color: #ffffff;
+    user-select: none;
 }
 
 .line__container {

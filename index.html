@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background:#222222">
     <div class="line__container">
@@ -20,12 +20,13 @@
                 <div class="text">hello</div>
             </div>
         </div>
-
-        <div class="speech-button" id="speech">〇</div>
-
+        <div class="speech-button" id="speech">
+            <img style="width:30px;" src="image/microphone_black.png">
+        </div>
+        
         <div class"interim__contents>
             <div class="interim">
-                <div class="interim_results">・・・</div><span class='title'>入力</span>
+                <div class="interim_results">・・・</div>
             </div>
         </div>
 
@@ -58,13 +59,11 @@
 
         function startSettings() {
             $("#speech").css({ 'background-color': '#dd3030' });
-            $("#speech").text("●");
             $(".interim_results").text("・・・");
         }
 
         function defaultSettings() {
-            $("#speech").css({ 'background-color': '#773333' });
-            $("#speech").text("〇");
+            $("#speech").css({ 'background-color': '#666666' });
             $(".interim_results").text("・・・");
         }
 
@@ -74,8 +73,7 @@
         }
 
         recognition.onresult = (event) => {
-            $("#speech").text("◎");
-            $("#speech").css({ 'background-color': '#ff4444' });
+            $("#speech").css({ 'background-color': '#ff0505' });
 
             if (event.results[event.results.length - 1].isFinal) {
                 startSettings();
