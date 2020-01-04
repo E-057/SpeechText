@@ -7,30 +7,125 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <button type="button" class="btn btn-primary" id="speech">Start</button>
+<body style="background:#222222">
+    <div class="line__container">
+        <div class="line__title">
+            Amadeus
         </div>
-</div>
+        <div class="line__contents scroll" id="chat_space">
+            <div class="line__left">
+                <div class="name">Amadeus</div>
+                <div class="text">hello</div>
+            </div>
+        </div>
+
+        <div class="speech-button" id="speech">〇</div>
+
+        <div class"interim__contents>
+            <div class="interim">
+                <div class="interim_results">・・・</div><span class='title'>入力</span>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
 
 <script>
-  SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-  const recognition = new SpeechRecognition();
+    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    var isActive = false;
+
+    //常に音声認識をON
+    recognition.continuous = true;
+
+    //途中結果の受取をON
+    recognition.interimResults = true;
 
     $(function () {
 
         $("#speech").on("click", function () {
+            if (!isActive) {
+                recognition.start();
+            } else {
+                recognition.stop();
+            }
+        })
 
-            recognition.onresult = (event) => {
-                alert(event.results[0][0].transcript);
+        function startSettings() {
+            $("#speech").css({ 'background-color': '#dd3030' });
+            $("#speech").text("●");
+            $(".interim_results").text("・・・");
+        }
+
+        function defaultSettings() {
+            $("#speech").css({ 'background-color': '#773333' });
+            $("#speech").text("〇");
+            $(".interim_results").text("・・・");
+        }
+
+        recognition.onstart = (event) => {
+            isActive = true;
+            console.log("onstart");
+        }
+
+        recognition.onresult = (event) => {
+            $("#speech").text("◎");
+            $("#speech").css({ 'background-color': '#ff4444' });
+
+            if (event.results[event.results.length - 1].isFinal) {
+                startSettings();
+                addUserText(event.results[event.results.length - 1][0].transcript);   
+                return;
             }
 
-            recognition.start();
-        })
+            $(".interim_results").text(event.results[event.results.length - 1][0].transcript);
+        }
+
+        recognition.onerror = (event) => {
+            isActive = false;
+            defaultSettings();
+            console.log("onerror");
+        }
+
+        recognition.onend = (event) => {
+            isActive = false;
+            console.log("onend");
+            defaultSettings();
+        }
+
+        recognition.onspeechstart = (event) => {
+            console.log("onspeechstart");
+            startSettings();
+        }
+
+        function addAmadeusText(text) {
+            $(".line__contents").append("<div class= 'line__left' ><div class='name'>Amadeus</div><div class='text'>" + text + "</div></div >");
+        }
         
+        function addUserText(text) {
+            var date = new Date();
+            var yy = date.getMonth() + 1;
+            var dd = date.getDate();
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+
+            var time = yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
+
+            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + time + "</span></div >");
+                        
+            addAmadeusText("そうですわね。");
+
+            scrollBottom();
+        }
+
+        function scrollBottom() {
+            var obj = document.getElementById('chat_space');
+            obj.scrollTop = obj.scrollHeight;
+        }
     });
 </script>

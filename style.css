@@ -1,0 +1,174 @@
+/*/////////////////////////////////////////////////
+//LINE風チャット画面(会話方式)を記事に表示する方法
+    URL : https://3owebcreate.com/web/coding/chat_line_css#outline__2_1
+/////////////////////////////////////////////////*/
+
+.line__container .speech-button {
+    background: #773333;
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    color: #ffffff;
+}
+
+.line__container {
+    position: relative;
+    padding: 0;
+    background: #888888;
+    overflow: hidden;
+    max-width: 700px;
+    max-height: 900px;
+    margin: 20px auto;
+    font-size: 80%;
+}
+
+.line__container .line__title {
+  background: #333333;
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.line__container .line__contents {
+  padding: 10px;
+  overflow: hidden;
+  line-height: 135%;
+}
+
+.line__container .scroll {
+  height: 700px;
+  overflow-y: scroll;
+}
+
+/* 相手の会話 */
+.line__container .line__left {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    max-width: 50%;
+    float: left;
+    clear: both;
+}
+
+.line__container .line__left .name {
+  font-size: 80%;
+  color: #ffffff;
+}
+
+.line__container .line__left .text {
+    margin: 0;
+    position: relative;
+    padding: 10px;
+    left: 10px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.line__container .line__left .text::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -10px;
+  top: 10px;
+  border-right: 20px solid #ffffff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* 自分の会話 */
+.line__container .line__right {
+    position: relative;
+    display: block;
+    margin: 5px 0;
+    max-width: 50%;
+    float: right;
+    margin-right: 15px;
+    clear: both;
+}
+
+.line__container .line__right .text {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #8de055;
+  margin: 0;
+  margin-left: 80px;
+}
+
+.line__container .line__right .text::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  right: -10px;
+  top: 10px;
+  border-left: 20px solid #8de055;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.line__container .line__right .date {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  text-align: right;
+  left: -30px;
+  bottom: 0px;
+  font-size: 80%;
+  color: #ffffff;
+}
+
+
+.interim {
+    position: relative;
+    display: block;
+    margin: 5px 0;
+    max-width: 50%;
+    float: right;
+    margin-right: 15px;
+    clear: both;
+}
+
+.interim__contents {
+    padding: 10px;
+    overflow: hidden;
+    line-height: 135%;
+}
+
+.interim .interim_results {
+    padding: 10px;
+    border-radius: 20px;
+    color:#dddddd;
+    background-color: #555555;
+    margin: 0;
+    margin-left: 80px;
+}
+
+.line__container .interim .interim_results::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    right: -10px;
+    top: 10px;
+    border-left: 20px solid #555555;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.interim .title {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100px;
+    text-align: right;
+    left: -30px;
+    bottom: 0px;
+    font-size: 80%;
+    color: #ffffff;
+}
