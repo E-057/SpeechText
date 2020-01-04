@@ -115,8 +115,13 @@
             var time = yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
 
             $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + time + "</span></div >");
-                        
-            addAmadeusText("そうですわね。");
+
+            var resultText = "そうですわね。";
+            if (text == "ぬるぽ") {
+                resultText = "がっ";
+            }
+
+            addAmadeusText(resultText);
 
             scrollBottom();
         }
