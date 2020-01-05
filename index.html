@@ -53,6 +53,8 @@
     $(function () {
 
         $("#speech").on("click", function () {
+            console.log(typeof gameInstance.SendMessage);
+
             if (typeof gameInstance.SendMessage != 'function') {
                 return;
             }
