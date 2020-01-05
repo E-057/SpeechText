@@ -112,7 +112,8 @@
 
             var resultText = gameInstance.SendMessage("Amadeus", "Amadeus", text);
 
-            if (resultText == null) {
+            if (resultText == null || resultText == undefined) {
+                recognition.stop();
                 return;
             }
 
