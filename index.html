@@ -115,25 +115,32 @@
         }
         
         function addUserText(text) {
+
+            var resultText = gameInstance.SendMessage("Amadeus", "Amadeus", text);
+
+            if (resultText == null) {
+                return;
+            }
+
+            var date = getDate();
+
+            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + date + "</span></div >");
+                        
+            addAmadeusText(resultText);
+
+            scrollBottom();
+        }
+
+        function getDate() {
             var date = new Date();
             var yy = date.getMonth() + 1;
             var dd = date.getDate();
             var hh = date.getHours();
             var mm = date.getMinutes();
 
-            var time = yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
+            return yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
 
-            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + time + "</span></div >");
-
-            var resultText = gameInstance.SendMessage("Amadeus", "Amadeus", text);
-
-            console.log(resultText);
-
-            addAmadeusText(resultText);
-
-            scrollBottom();
         }
-
         function scrollBottom() {
             var obj = document.getElementById('chat_space');
             obj.scrollTop = obj.scrollHeight;
