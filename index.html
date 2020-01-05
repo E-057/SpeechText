@@ -42,8 +42,6 @@
 
     var isActive = false;
 
-    var setup = false;
-
     //常に音声認識をON
     recognition.continuous = true;
 
@@ -51,12 +49,10 @@
     recognition.interimResults = true;
 
     $(function () {
-        $("#speech").css({ 'background-color': '#555555' });
-
         var gameInstance = UnityLoader.instantiate("chat_space", "Build/AmadeusApi.json", { onProgress: UnityProgress });
 
         $("#speech").on("click", function () {
-            if (!isActive && setup) {
+            if (!isActive) {
                 recognition.start();
             } else {
                 recognition.stop();
