@@ -53,12 +53,6 @@
     $(function () {
 
         $("#speech").on("click", function () {
-            console.log(typeof gameInstance.SendMessage);
-
-            if (typeof gameInstance.SendMessage != 'function') {
-                return;
-            }
-
             if (!isActive) {
                 recognition.start();
             } else {
@@ -139,8 +133,8 @@
             var mm = date.getMinutes();
 
             return yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
+                    }
 
-        }
         function scrollBottom() {
             var obj = document.getElementById('chat_space');
             obj.scrollTop = obj.scrollHeight;
