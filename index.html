@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background:#222222">
@@ -23,13 +25,12 @@
         <div class="speech-button" id="speech">
             <img style="width:30px;" src="image/microphone_black.png">
         </div>
-        
+
         <div class"interim__contents>
             <div class="interim">
                 <div class="interim_results">・・・</div>
             </div>
         </div>
-
     </div>
 
 </body>
@@ -41,6 +42,8 @@
 
     var isActive = false;
 
+    var setup = false;
+
     //常に音声認識をON
     recognition.continuous = true;
 
@@ -48,9 +51,12 @@
     recognition.interimResults = true;
 
     $(function () {
+        $("#speech").css({ 'background-color': '#555555' });
+
+        var gameInstance = UnityLoader.instantiate("chat_space", "Build/AmadeusApi.json", { onProgress: UnityProgress });
 
         $("#speech").on("click", function () {
-            if (!isActive) {
+            if (!isActive && setup) {
                 recognition.start();
             } else {
                 recognition.stop();
@@ -116,10 +122,9 @@
 
             $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + time + "</span></div >");
 
-            var resultText = "そうですわね。";
-            if (text == "ぬるぽ") {
-                resultText = "がっ";
-            }
+            var resultText = SendMessage("Amadeus", "Amadeus", text);
+
+            console.log(resultText);
 
             addAmadeusText(resultText);
 
@@ -130,5 +135,13 @@
             var obj = document.getElementById('chat_space');
             obj.scrollTop = obj.scrollHeight;
         }
+
+        function setupAmadeus() {
+            setup = true;
+            defaultSettings();
+
+            console.log("setup");
+        }
+
     });
 </script>
