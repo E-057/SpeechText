@@ -134,14 +134,16 @@
         function scrollBottom() {
             var obj = document.getElementById('chat_space');
             obj.scrollTop = obj.scrollHeight;
-        }
+        }        
 
-        function setupAmadeus() {
+    });
+
+    mergeInto(LibraryManager.library, {
+        setupAmadeus: function () {
             setup = true;
             defaultSettings();
 
             console.log("setup");
         }
-
     });
 </script>
