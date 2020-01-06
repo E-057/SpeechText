@@ -110,9 +110,11 @@
         
         function addUserText(text) {
 
-            var resultText = gameInstance.SendMessage("Amadeus", "Amadeus", text);
+            var resultText = "";
+            gameInstance.SendMessage("Amadeus", "Amadeus", text, resultText);
 
             if (resultText == null || resultText == undefined) {
+                console.log("error : cannot get result");
                 recognition.stop();
                 return;
             }
