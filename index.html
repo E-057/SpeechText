@@ -49,7 +49,7 @@
     recognition.interimResults = true;
 
     var gameInstance = UnityLoader.instantiate("chat_space", "Build/AmadeusApi.json", { onProgress: UnityProgress });
-
+    
     $(function () {
 
         $("#speech").on("click", function () {
@@ -109,9 +109,13 @@
         }
         
         function addUserText(text) {
+            
+            AmadeusData data = new AmadeusData();
+            data.input = text;
 
-            var resultText = "";
-            gameInstance.SendMessage("Amadeus", "Amadeus", text, resultText);
+            gameInstance.SendMessage("Amadeus", "Amadeus", data);
+            
+            var resultText = data.output;
 
             console.log(resultText);
 
@@ -146,4 +150,5 @@
         }        
 
     });
+
 </script>
