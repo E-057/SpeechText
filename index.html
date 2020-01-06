@@ -113,6 +113,8 @@
             var resultText = "";
             gameInstance.SendMessage("Amadeus", "Amadeus", text, resultText);
 
+            console.log(resultText);
+
             if (resultText == null || resultText == undefined) {
                 console.log("error : cannot get result");
                 recognition.stop();
@@ -122,7 +124,7 @@
             var date = getDate();
 
             $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + date + "</span></div >");
-                        
+
             addAmadeusText(resultText);
 
             scrollBottom();
