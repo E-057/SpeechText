@@ -107,15 +107,16 @@
         function addAmadeusText(text) {
             $(".line__contents").append("<div class= 'line__left' ><div class='name'>Amadeus</div><div class='text'>" + text + "</div></div >");
         }
-        
+
         function addUserText(text) {
             
             var data = new gameInstance.AmadeusData();
-            data.input = text;
 
-            gameInstance.SendMessage("Amadeus", "Amadeus", data);
+            var input = text;
+
+            gameInstance.SendMessage("Amadeus", "Amadeus", text);
             
-            var resultText = data.output;
+            var output = text;
 
             console.log(resultText);
 
@@ -127,9 +128,9 @@
 
             var date = getDate();
 
-            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + date + "</span></div >");
+            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + input + "</div><span class='date'>" + date + "</span></div >");
 
-            addAmadeusText(resultText);
+            addAmadeusText(output);
 
             scrollBottom();
         }
