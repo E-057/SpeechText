@@ -110,7 +110,7 @@
         
         function addUserText(text) {
             
-            AmadeusData data = new AmadeusData();
+            var data = new gameInstance.AmadeusData();
             data.input = text;
 
             gameInstance.SendMessage("Amadeus", "Amadeus", data);
