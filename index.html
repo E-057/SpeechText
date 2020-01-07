@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="speech-button off" id="speech">
-            <img style="width:30px;" src="">
+            <img style="width:30px;" src="image/microphone_black.png" />
         </div>
 
         <div class"interim__contents>
@@ -53,10 +53,6 @@
     $(function () {
 
         $("#speech").on("click", function () {
-            if ($(this).hasClass("off")) {
-                return;
-            }
-
             if (!isActive) {
                 recognition.start();
             } else {
