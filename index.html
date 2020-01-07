@@ -80,7 +80,7 @@
 
             if (event.results[event.results.length - 1].isFinal) {
                 startSettings();
-                addUserText(event.results[event.results.length - 1][0].transcript);   
+                sendText(event.results[event.results.length - 1][0].transcript);
                 return;
             }
 
@@ -104,50 +104,21 @@
             startSettings();
         }
 
+        function sendText(text) {
+            gameInstance.SendMessage("Amadeus", "Amadeus", text);
+        }
+        
         function addAmadeusText(text) {
             $(".line__contents").append("<div class= 'line__left' ><div class='name'>Amadeus</div><div class='text'>" + text + "</div></div >");
         }
 
         function addUserText(text) {
-            var input = text;
-
-            var data = { "input": input, "output": null };
-
-            gameInstance.SendMessage("Amadeus", "Amadeus", data);
-            
-            var output = data["output"];
-
-            console.log(output);
-
-            if (output == null || output == undefined) {
-                console.log("error : cannot get result");
-                recognition.stop();
-                return;
-            }
 
             var date = getDate();
 
-            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + input + "</div><span class='date'>" + date + "</span></div >");
-
-            addAmadeusText(output);
-
-            scrollBottom();
+            $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + date + "</span></div >");
         }
-
-        function getDate() {
-            var date = new Date();
-            var yy = date.getMonth() + 1;
-            var dd = date.getDate();
-            var hh = date.getHours();
-            var mm = date.getMinutes();
-
-            return yy.toString().padStart(2, '0') + "月" + dd.toString().padStart(2, '0') + "日<br>" + hh.toString().padStart(2, '0') + "時" + mm.toString().padStart(2, '0') + "分";
-                    }
-
-        function scrollBottom() {
-            var obj = document.getElementById('chat_space');
-            obj.scrollTop = obj.scrollHeight;
-        }        
+     
 
     });
 
