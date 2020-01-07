@@ -109,12 +109,13 @@
         }
 
         function addUserText(text) {
-            
             var input = text;
 
-            gameInstance.SendMessage("Amadeus", "Amadeus", text);
+            var data = { "input": input, "output": null };
+
+            gameInstance.SendMessage("Amadeus", "Amadeus", data);
             
-            var output = text;
+            var output = data["output"];
 
             console.log(output);
 
