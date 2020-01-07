@@ -62,7 +62,7 @@
     margin: 0;
     position: relative;
     padding: 10px;
-    left: 20px;
+    left: 10px;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -96,7 +96,6 @@
   border-radius: 20px;
   background-color: #8de055;
   margin: 0;
-  right : 10px;
   margin-left: 80px;
 }
 
