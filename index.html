@@ -79,8 +79,10 @@
             $("#speech").css({ 'background-color': '#ff0505' });
 
             if (event.results[event.results.length - 1].isFinal) {
+                gameInstance.SendMessage("Amadeus", "Amadeus", event.results[event.results.length - 1][0].transcript);
+
                 startSettings();
-                sendText(event.results[event.results.length - 1][0].transcript);
+
                 return;
             }
 
@@ -104,10 +106,7 @@
             startSettings();
         }
 
-        function sendText(text) {
-            gameInstance.SendMessage("Amadeus", "Amadeus", text);
-        }
-        
+        /*
         function addAmadeusText(text) {
             $(".line__contents").append("<div class= 'line__left' ><div class='name'>Amadeus</div><div class='text'>" + text + "</div></div >");
         }
@@ -118,7 +117,7 @@
 
             $(".line__contents").append("<div class= 'line__right' ><div class='text'>" + text + "</div><span class='date'>" + date + "</span></div >");
         }
-     
+        */
 
     });
 
