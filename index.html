@@ -13,7 +13,9 @@
 </head>
 <body style="background:#000000">
     <div class="line__container">
-        <div class="line__title"  id="unity_space">
+        <div class="unity" id="unity_space">
+        </div>
+        <div class="line__title">
             Amadeus
         </div>
         <div class="line__contents scroll" id="chat_space">
@@ -73,11 +75,10 @@
 
         recognition.onstart = (event) => {
             isActive = true;
-            startSettings();
             console.log("onstart");
         }
 
-        recognition.onspeechstart = () => { console.log('on speech start') }
+        rec.onspeechstart = () => { console.log('on speech start') }
 
         recognition.onresult = (event) => {
             $("#speech").css({ 'background-color': '#ff0505' });
