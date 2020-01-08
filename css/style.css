@@ -41,11 +41,11 @@ body{
   padding: 10px;
   overflow: hidden;
   line-height: 135%;
-  height: 700px;
+  height: 650px;
 }
 
 .line__container .scroll {
-  height: 700px;
+  height: 650px;
   overflow-y: scroll;
   background: #000000;
 }
