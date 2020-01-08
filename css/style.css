@@ -3,9 +3,13 @@
     URL : https://3owebcreate.com/web/coding/chat_line_css#outline__2_1
 /////////////////////////////////////////////////*/
 
+html{
+    height:100%;
+}
+
 body{
     background:#cccccc;
-    max-height:950px;
+    height:100%;
 }
 
 .line__container .speech-button {
