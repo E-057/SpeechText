@@ -30,10 +30,8 @@ $(function () {
 
         function defaultSettings() {
             $("#speech").css({ 'background-color': '#666666' });
-            $(".interim_results").text(". . .");
 
-
-            $("interim").remove();
+            $("interim").remove("interim_results");
         }
 
         recognition.onstart = (event) => {
