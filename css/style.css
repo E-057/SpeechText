@@ -36,12 +36,13 @@
   overflow: hidden;
   line-height: 135%;
   height: 700px;
+  background: #000000;
 }
 
 .line__container .scroll {
   height: 700px;
   overflow-y: scroll;
-  background: #aaaaaa;
+  background: #7494c0;
 }
 
 /* 相手の会話 */
