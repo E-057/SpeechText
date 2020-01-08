@@ -24,11 +24,16 @@ $(function () {
         function startSettings() {
             $("#speech").css({ 'background-color': '#dd3030' });
             $(".interim_results").text(". . .");
+
+            $("interim").append('<div class="interim_results">. . .</div>');
         }
 
         function defaultSettings() {
             $("#speech").css({ 'background-color': '#666666' });
             $(".interim_results").text(". . .");
+
+
+            $("interim").remove();
         }
 
         recognition.onstart = (event) => {
