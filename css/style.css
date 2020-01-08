@@ -35,6 +35,7 @@
   padding: 10px;
   overflow: hidden;
   line-height: 135%;
+  height: 700px;
 }
 
 .line__container .scroll {
