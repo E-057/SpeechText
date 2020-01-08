@@ -9,6 +9,7 @@ body{
 
 .line__container .speech-button {
     background: #666666;
+    top:10px;
     padding: 10px;
     text-align: center;
     font-size: 150%;
