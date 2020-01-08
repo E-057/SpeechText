@@ -3,6 +3,10 @@
     URL : https://3owebcreate.com/web/coding/chat_line_css#outline__2_1
 /////////////////////////////////////////////////*/
 
+body{
+    background:#333333;
+}
+
 .line__container .speech-button {
     background: #666666;
     padding: 10px;
