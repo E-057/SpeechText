@@ -23,18 +23,13 @@
     font-size: 80%;
 }
 
-.line__container .unity{
-  background: #000000;
-  height : 30px;
-  padding: 10px;
-}
-
 .line__container .line__title {
   background: #333333;
   padding: 10px;
   text-align: center;
   font-size: 150%;
   color: #ffffff;
+  height: 50px;
 }
 
 .line__container .line__contents {
