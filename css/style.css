@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////*/
 
 body{
-    background:#333333;
+    background:#666666;
 }
 
 .line__container .speech-button {
@@ -54,7 +54,7 @@ body{
     position: relative;
     display: block;
     margin-bottom: 5px;
-    max-width: 50%;
+    max-width: 45%;
     float: left;
     clear: both;
 }
@@ -68,7 +68,7 @@ body{
     margin: 0;
     position: relative;
     padding: 10px;
-    left: 20px;
+    left: 15px;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -91,14 +91,14 @@ body{
     position: relative;
     display: block;
     margin: 5px 0;
-    max-width: 50%;
+    max-width: 45%;
     float: right;
     margin-right: 15px;
     clear: both;
 }
 
 .line__container .line__right .text {
-  right: 20px;
+  right: 30px;
   padding: 10px;
   border-radius: 20px;
   background-color: #8de055;
