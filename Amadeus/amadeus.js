@@ -23,12 +23,12 @@ $(function () {
 
         function startSettings() {
             $("#speech").css({ 'background-color': '#dd3030' });
-            $(".interim_results").text("...");
+            $(".interim_results").text(". . .");
         }
 
         function defaultSettings() {
             $("#speech").css({ 'background-color': '#666666' });
-            $(".interim_results").text("...");
+            $(".interim_results").text(". . .");
         }
 
         recognition.onstart = (event) => {
