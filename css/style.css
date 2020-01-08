@@ -46,7 +46,7 @@ body{
 .line__container .scroll {
   height: 700px;
   overflow-y: scroll;
-  background: #7494c0;
+  background: #000000;
 }
 
 /* 相手の会話 */
