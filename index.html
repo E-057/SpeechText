@@ -73,8 +73,11 @@
 
         recognition.onstart = (event) => {
             isActive = true;
+            startSettings();
             console.log("onstart");
         }
+
+        recognition.onspeechstart = () => { console.log('on speech start') }
 
         recognition.onresult = (event) => {
             $("#speech").css({ 'background-color': '#ff0505' });
