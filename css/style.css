@@ -21,7 +21,7 @@ body{
 .line__container {
     position: relative;
     padding: 0;
-    background: #7494c0;
+    background: #000000;
     overflow: hidden;
     max-width: 500px;
     max-height: 900px;
@@ -42,7 +42,6 @@ body{
   overflow: hidden;
   line-height: 135%;
   height: 700px;
-  background: #000000;
 }
 
 .line__container .scroll {
