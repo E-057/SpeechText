@@ -57,6 +57,7 @@ body{
     max-width: 45%;
     float: left;
     clear: both;
+    left:20px
 }
 
 .line__container .line__left .name {
@@ -68,7 +69,6 @@ body{
     margin: 0;
     position: relative;
     padding: 10px;
-    left: 15px;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -95,10 +95,10 @@ body{
     float: right;
     margin-right: 15px;
     clear: both;
+    right:20px;
 }
 
 .line__container .line__right .text {
-  right: 30px;
   padding: 10px;
   border-radius: 20px;
   background-color: #8de055;
