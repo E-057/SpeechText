@@ -25,13 +25,13 @@ $(function () {
             $("#speech").css({ 'background-color': '#dd3030' });
             $(".interim_results").text(". . .");
 
-            $(".interim").append('<div class="interim_results">. . .</div>');
+            $(".interim").append("<div class='interim_results'>. . .</div>");
         }
 
         function defaultSettings() {
             $("#speech").css({ 'background-color': '#666666' });
 
-            $(".interim").remove("interim_results");
+            $(".interim_results").remove();
         }
 
         recognition.onstart = (event) => {
