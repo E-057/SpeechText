@@ -12,9 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background:#000000">
+    <div class="unity" id="unity_space">
+    </div>
     <div class="line__container">
-        <div class="unity" id="unity_space">
-        </div>
         <div class="line__title">
             Amadeus
         </div>
@@ -78,7 +78,7 @@
             console.log("onstart");
         }
 
-        rec.onspeechstart = () => { console.log('on speech start') }
+        recognition.onspeechstart = () => { console.log('on speech start') }
 
         recognition.onresult = (event) => {
             $("#speech").css({ 'background-color': '#ff0505' });
