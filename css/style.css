@@ -32,7 +32,7 @@
 }
 
 .line__container .line__contents {
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
   line-height: 135%;
 }
@@ -40,7 +40,7 @@
 .line__container .scroll {
   height: 700px;
   overflow-y: scroll;
-  background: #7494c0;
+  background: #aaaaaa;
 }
 
 /* 相手の会話 */
@@ -62,7 +62,7 @@
     margin: 0;
     position: relative;
     padding: 10px;
-    left: 10px;
+    left: 20px;
     border-radius: 20px;
     background-color: #ffffff;
 }
@@ -92,6 +92,7 @@
 }
 
 .line__container .line__right .text {
+  right: 20px;
   padding: 10px;
   border-radius: 20px;
   background-color: #8de055;
