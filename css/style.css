@@ -23,6 +23,10 @@
     font-size: 80%;
 }
 
+.line__container .unity{
+    height : 20px;
+}
+
 .line__container .line__title {
   background: #333333;
   padding: 10px;
