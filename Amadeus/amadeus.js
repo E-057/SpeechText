@@ -25,7 +25,6 @@ $(function () {
             $("#speech").css({ 'background-color': '#dd3030' });
             $(".interim_results").text(". . .");
 
-            $(".interim").append("<div class='interim_results'>. . .</div>");
         }
 
         function defaultSettings() {
@@ -37,6 +36,7 @@ $(function () {
         recognition.onstart = (event) => {
             isActive = true;
             startSettings();
+            $(".interim").append("<div class='interim_results'>. . .</div>");
             console.log("onstart");
         }
 
