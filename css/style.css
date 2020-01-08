@@ -26,6 +26,7 @@
 .line__container .unity{
   background: #000000;
   padding: 10px;
+  height:10px;
 }
 
 .line__container .line__title {
